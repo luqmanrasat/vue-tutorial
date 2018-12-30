@@ -1,13 +1,31 @@
 var one = new Vue({
   el: '#vue-app-one',
-  data: {},
+  data: {
+    title: "Vue App One"
+  },
   methods: {},
-  computed: {}
+  computed: {
+    greet: function() {
+      return 'Hello from app one!';
+    }
+  }
 });
 
 var two = new Vue({
   el: '#vue-app-two',
-  data: {},
-  methods: {},
-  computed: {}
+  data: {
+    title: "Vue App Two"
+  },
+  methods: {
+    changeTitle: function() {
+      one.title = "something else";
+    }
+  },
+  computed: {
+    greet: function() {
+      return 'Hello from app two!';
+    }
+  }
 });
+
+two.title = "Changed from outside";
