@@ -10,7 +10,21 @@
 
 <body>
 
-  <div id="vue-app"></div>
+  <div id="vue-app">
+    <h1>Conditionals</h1>
+    <button @click= "showpara">Click Me</button>
+    <span>{{ show }}</span>
+    <p v-if = "show">Chipsmore</p>
+    <p v-else>Ayam</p>
+    <p v-show = "show">toggle style only</p>
+
+    <h1>Iterations</h1>
+    <input type="text" @keyup.enter = "showinputvalue" :style = "styleiter" placeholder="Enter names:">
+    <h3 v-if = "items.length > 0">Display names</h3>
+    <ul>
+      <li v-for = "(a, index) in items">{{ index + 1 }}. {{ a }}</li>
+    </ul>
+  </div>
 
   <script src="./js/app.js"></script>
 </body>
