@@ -1,0 +1,39 @@
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 2s
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+  background-color: red;
+}
+
+.shiftx-enter-active, .shiftx-leave-active {
+  transition: opacity 2s;
+  transition: all 2s ease-in-out;
+}
+
+.shiftx-enter, .shiftx-leave-to /* .shiftx-leave-active below version 2.1.8 */ {
+  transform: translateX(100px);
+  opacity: 0;
+}
+
+.shift2-enter-active {
+  animation: shift-in 2s;
+}
+
+.shift2-leave-active {
+  animation: shift-in 2s reverse;
+}
+
+@keyframes shift-in {
+  0% {transform: rotateX(0deg);}
+  25% {transform: rotateX(90deg);}
+  50% {transform: rotateX(120deg);}
+  75% {transform: rotateX(180deg);}
+  100% {transform: rotateX(360deg);}
+}

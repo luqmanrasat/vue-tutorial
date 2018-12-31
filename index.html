@@ -5,13 +5,64 @@
   <meta charset="utf-8">
   <title>VueJs Tutorial</title>
   <link rel="stylesheet" href="./css/style.css">
+  <link href = "https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel = "stylesheet" type = "text/css">
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
 
-  <div id="vue-app"></div>
+  <div id="vue-app">
+    <h1>Transition</h1>
+    <button @click = "show0 = !show0">Click meh</button>
+    <transition name ="fade">
+      <p v-show="show0" :style="styletrans">Transition Example</p>
+    </transition>
 
+    <button @click="show1 = !show1">Click meh</button>
+    <transition name="shiftx">
+      <div v-show="show1">
+        <div class="box"></div>
+      </div>
+    </transition>
+
+    <h1>Animation</h1>
+    <button @click="show2 = !show2">Click meh</button>
+    <transition name="shift2">
+      <div v-show="show2">
+        <div class="box">im spinning</div>
+      </div>
+    </transition>
+
+    <h3>Animation(Using external css library)</h3>
+    <button @click = "show3 = !show3"><span style = "font-size:25px;">Animate</span></button>
+    <transition name="custom-classes-external" enter-active-class="animated swing" leave-active-class="animated bounceIn">
+      <p v-if="show3"><span style="font-size: 25px;">Example</span></p>
+    </transition>
+
+    <h1>Javascript hooks</h1>
+    <button @click="show4 = !show4"><span style="font-size:25px;">Toggle</span></button>
+    <transition @before-enter="beforeEnter" @enter="enter" @leave="leave" :css="false">
+      <p v-if="show4" style="font-size:25px;">Animation Example with velocity</p>
+    </transition>
+
+    <h1>Transition at the Initial Render</h3>
+    <transition appear appear-class="custom-appear-class" appear-active-class="animated bounceIn">
+      <h3>BounceIn - Animation Example</h3>
+    </transition>
+    <transition appear appear-class="custom-appear-class" appear-active-class="animated swing">
+      <h3>Swing - Animation Example</h3>
+    </transition>
+    <transition appear appear-class="custom-appear-class" appear-active-class="animated rubberBand">
+      <h3>RubberBand - Animation Example</h3>
+    </transition>
+
+    <h1>Animation on Components</h1>
+    <transition appear appear-class="custom-appear-class" appear-active-class="animated wobble">
+      <component :is="view"></component>
+    </transition>
+  </div>
+  
   <script src="./js/app.js"></script>
 </body>
 
