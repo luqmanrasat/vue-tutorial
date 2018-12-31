@@ -6,11 +6,21 @@
   <title>VueJs Tutorial</title>
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 </head>
 
 <body>
 
-  <div id="vue-app"></div>
+  <div id="vue-app">
+    <h1>Routing Example</h1>
+    <div>
+      <router-link to="/route1" event="mouseover">Router Link 1</router-link>
+      <router-link to="/route2" event="mouseover">Router Link 2</router-link>
+    </div>
+    <!-- route outlet -->
+    <!-- component matched by the route will render here -->
+    <router-view></router-view>
+  </div>
 
   <script src="./js/app.js"></script>
 </body>

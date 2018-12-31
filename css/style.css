@@ -1,0 +1,19 @@
+.box {
+  width: 200px;
+  height: 50px;
+  margin: 10px;
+  font-size: 25px;
+  padding: 10px;
+}
+
+.box--rounded {
+  border-radius: 20px;
+}
+
+.box--cyan {
+  background-color: cyan;
+}
+
+.box--green {
+  background-color: green;
+}
