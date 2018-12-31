@@ -10,7 +10,14 @@
 
 <body>
 
-  <div id="vue-app"></div>
+  <div id="vue-app">
+    <h1>Refs</h1>
+    <input type="text" ref="input" />
+    <button @click="readRefs">Submit</button>
+    <p>Your fav food: {{ output }}</p>
+
+    <div ref="test">Hello</div>
+  </div>
 
   <script src="./js/app.js"></script>
 </body>
