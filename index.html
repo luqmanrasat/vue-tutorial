@@ -10,8 +10,14 @@
 
 <body>
 
-  <div id="vue-app"></div>
+  <div id="vue-app">
+    <div v-changestyle0>VueJS Directive</div>
+    <div v-changestyle1="{ color: 'green' }">VueJS Directive</div>
 
+    <h1>Filters</h1>
+    <input v-model="name" placeholder="Enter Name"><br />
+    <span style="font-size: 25px;">Letter count is : {{ name | countletters }}</span>
+  </div>
   <script src="./js/app.js"></script>
 </body>
 
